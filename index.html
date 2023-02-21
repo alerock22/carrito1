@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRUPO Nº 5 SHOP</title>
+  <!--=============== FAVICON ===============-->
+  <link rel="shortcut icon" href="assets/img/HP.png" type="image/x-icon">
+  <!--=============== BOXICONS ===============-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!--==================== HEADER ====================-->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+       <!--  <i class='bx bxl-sketch bx-flashing' >Grupo Nº 5</i>
+          <title>GRUPO Nº 5</title>  -->
+        <picture class="nav__logo-container">
+          <img class="nav__logo-img" src="assets/img/logo.png" alt="">
+        </picture>
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#products" class="nav__link">Products</a>
+          </li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+
+      <div class="nav__btns">
+        <!-- Theme change button -->
+        <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+        <div class="nav__shop" id="cart-shop">
+          <i class='bx bx-shopping-bag'></i>
+          <span id="cart-count" class="count"></span>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class='bx bx-grid-alt'></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--==================== CART ====================-->
+  <div class="cart" id="cart">
+    <i class='bx bx-x cart__close' id="cart-close"></i>
+
+    <h2 class="cart__title-center"><i class='bx bx-cart'></i> Cart</h2>
+
+    <div id="cart__container" class="cart__container">
+
+      <article class="cart__card">
+        <div class="cart__box">
+          <img src="assets/img/Apple.png" alt="Hoodies" class="cart__img">
+        </div>
+
+        <div class="cart__details">
+          <h3 class="cart__title">Apple Ultimate 16Gb<span class="cart__price">$300.00</span></h3>
+
+          <div class="cart__amount">
+            <div class="cart__amount-content">
+              <span class="cart__amount-box removeToCart" data-id="1">
+                <i class="bx bx-minus"></i>
+              </span>
+              
+              <span class="cart__amount-number">1</span>
+
+              <span class="cart__amount-box addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </span>
+            </div>
+           
+            <i class="bx bx-trash-alt cart__amount-trash deleteToCart" data-id="1"></i>
+          </div>
+
+          <span class="cart__subtotal">
+            <span class="cart__stock">10 units available</span>
+            <span class="cart__subtotal-price">$300.00</span>
+          </span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cart__prices">
+      <span class="cart__prices-item"><span id="items-count"></span> Units</span>
+      <span class="cart__prices-total" id="cart-total"></span>
+    </div>
+
+    <div id="action-buttons" class="cart__checkout">
+      <button class="button cart__btn" id="cart-checkout" disabled><i class='bx bxs-check-shield'></i> Buy</button>
+      <button class="button cart__btn" id="cart-empty" disabled><i class='bx bx-cart-alt'></i> Clear</button>
+    </div>
+
+  </div>
+
+  <!--==================== MAIN ====================-->
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home" id="home">
+      <div class="home__container container grid">
+        <div class="home__img-bg">
+          <img src="assets/img/Apple.png" alt="" class="home__img">
+        </div>
+
+        <div class="home__data">
+          <h1 class="home__title">Apple Ultimate 16Gb<br> Until out of stock</h1>
+          <p class="home__description">
+            New Line!
+          </p>
+          <span class="home__price">$300.00</span>
+
+          <div class="home__btns">
+            <a href="#" class="button button--transparent button--small">
+              Discover
+            </a>
+
+            <button class="button home__button" data-id="1">ADD TO CART</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== PRODUCTS ====================-->
+    <section class="products" id="products">
+      <div class="products__container container">
+        <ul class="products__filters">
+          <li class="products__item products__line" data-filter="all">
+            <h3 class="products__title">
+              Show All
+            </h3>
+            <span class="products__stock">
+              Show all products
+            </span>
+          </li>
+
+          <li class="products__item products__line active-product" data-filter=".laptop">
+            <h3 class="products__title">
+              Laptops
+            </h3>
+            <span class="products__stock">
+              3 products
+            </span>
+          </li>
+
+          <li class="products__item products__line" data-filter=".iphone">
+            <h3 class="products__title">
+              Iphones
+            </h3>
+            <span class="products__stock">
+              3 products
+            </span>
+          </li>
+
+          <li class="products__item products__line" data-filter=".headphones">
+            <h3 class="products__title">
+              Auriculares
+            </h3>
+            <span class="products__stock">
+              3 products
+            </span>
+          </li>
+
+        </ul>
+
+        <div class="products__content grid" id="products__content">
+
+          <article class="products__card eyeshadows">
+            <div class="products__shape">
+              <img src="assets/img/eyeshadow (1).png" alt="EyeShadow" class="products__img">
+            </div>
+
+            <div class="products__data">
+              <h2 class="products__name">EyeShadow</h2>
+              <div class="">
+                <h3 class="products__price">$30.00</h3>
+                <span class="products__quantity">Only 10 Available</span>
+              </div>
+              <button type="button" class="button products__button addToCart" data-id="1">
+                <i class="bx bx-plus"></i>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <h3 class="footer__title">Find Us</h3>
+
+        <ul class="footer__list">
+          <li>Cordoba - Argentina</li>
+        </ul>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">About Us</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Support Center</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Customer Support</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">About US</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Copyright</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Product</h3>
+
+        <ul class="footer__links">
+          <li>
+            <a href="#" class="footer__link">Laptops</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Iphones</a>
+          </li>
+          <li>
+            <a href="#" class="footer__link">Headphones</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="modal">
+        <div class="modal__container">
+          <h2 class="modal__title">Thanks for your purchase!</h2>
+          <p class="modal__description">Your order is processed and ready to be shipped, we hope you enjoy it. <br> Order No. 23-245-6789</p>
+          <a href="#" class="modal__close">Close</a>
+        </div>
+      </div>
+
+      <div class="modal-delete">
+        <div class="modal__container-delete">
+          <h2 class="modal__title-delete">Are you sure?</h2>
+          <p class="modal__description-delete">By confirming you will lose all changes</p>
+          <div class="botun">
+            <a href="#" class="modal__close-delete-si">Yes</a><a href="#" class="modal__close-delete-no">No</a>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="modal-insuficiente-stock">
+        <div class="modal__container-insuficiente-stock">
+          <h2 class="modal__title-insuficiente-stock">Insuficiente Stock!</h2>
+          <p class="modal__description-insuficiente-stock">We are so sorry, Insuficiente Stock</p>
+          <img src="assets/img/out of stock.png.jpg" alt="Insuficiente Stock">
+          <a href="#" class="modal__close-insuficiente-stock">Close</a>
+        </div>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Social</h3>
+
+        <ul class="footer__social">
+          <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-facebook'></i>
+          </a>
+
+          <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-twitter'></i>
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+            <i class='bx bxl-instagram'></i>
+          </a>
+        </ul>
+      </div>
+    </div>
+
+    <span class="footer__copy">&#169; Generacion XXIII. Todos los derechos reservados</span>
+  </footer>
+
+  <!--=============== SCROLL UP ===============-->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+  </a>
+
+  <!--=============== MIXITUP FILTER ===============-->
+  <script src="assets/js/helpers/mixitup.min.js"></script>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="assets/js/main.js" type="module" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+</body>
+
+</html>
